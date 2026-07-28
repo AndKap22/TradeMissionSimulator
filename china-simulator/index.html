@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f1f0e8">
+  <meta name="description" content="«Китай: первая партия» — интерактивный тренажёр решений и материалы о деловой работе в Китае.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Китай: первая партия — пять практических дел">
+  <meta property="og:description" content="Пять дел: приборы, продукты, программное обеспечение, логистика и институциональные инвестиции через QFII.">
+  <meta property="og:image" content="{{ORIGIN}}/og-v21.png">
+  <meta property="og:image:alt" content="Китай: первая партия — интерактивный тренажёр экспортных решений">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Китай: первая партия">
+  <meta name="twitter:description" content="Пять практических дел о работе с Китаем, включая логистику и QFII.">
+  <meta name="twitter:image" content="{{ORIGIN}}/og-v21.png">
+  <title>Китай: первая партия — экспортный тренажёр</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="brand" id="brandHome" aria-label="К выбору дела">
+      <span class="brand-mark" id="brandMark">КП</span>
+      <span><strong>Китай: первая партия</strong><small id="brandCase">экспортный тренажёр</small></span>
+    </button>
+    <div class="institution-line">
+      <i></i>
+      <span>Учебная версия для обсуждения</span>
+      <b>Торгпредство России в КНР · Минпромторг России · МГИМО</b>
+    </div>
+    <div class="top-actions">
+      <button class="quiet-button culture-link" id="cultureButton">О бизнес-культуре</button>
+      <button class="quiet-button" id="methodButton">Как оценивается</button>
+      <button class="quiet-button" id="documentsButton" hidden>Материалы <span id="documentCount">0</span></button>
+      <button class="quiet-button" id="restartButton" hidden>Сменить дело</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="screen catalog-screen active" id="catalogScreen">
+      <header class="catalog-intro">
+        <div class="catalog-title">
+          <span class="overline">Практический тренажёр · версия 2.4</span>
+          <h1>Пять дел.<br><em>Пять маршрутов.</em></h1>
+        </div>
+        <div class="catalog-summary">
+          <p>Выберите дело и примите восемь решений: определите маршрут, проверьте партнёра, распределите бюджет и согласуйте условия. В конце вы увидите последствия каждого выбора.</p>
+          <div class="catalog-proof" aria-label="Как проходит дело">
+            <span><b>01</b> Выбрать рынок</span>
+            <span><b>02</b> Проверить партнёра</span>
+            <span><b>03</b> Распределить бюджет</span>
+            <span><b>04</b> Увидеть последствия</span>
+          </div>
+          <div class="catalog-progress" id="catalogProgress" aria-live="polite"></div>
+          <div class="catalog-actions">
+            <button class="catalog-guide-link" id="catalogGuideButton">
+              <span>Полезно перед переговорами</span>
+              <strong>О бизнес-культуре Китая</strong>
+              <b>↗</b>
+            </button>
+            <p class="pilot-note">Учебная версия. Это не официальный сервис и не индивидуальная рекомендация указанных организаций.</p>
+          </div>
+        </div>
+      </header>
+      <div class="catalog-workbench">
+        <div class="case-cards" id="caseCards" aria-label="Экспортные дела"></div>
+        <aside class="case-preview" id="casePreview" aria-live="polite"></aside>
+      </div>
+    </section>
+
+    <section class="screen culture-screen" id="cultureScreen">
+      <div class="culture-shell">
+        <header class="culture-hero">
+          <div>
+            <span class="overline">Подготовка к работе в Китае · обновлено в июле 2026 года</span>
+            <h1>О бизнес-культуре <em>Китая</em></h1>
+            <p>Как провести встречу, проверить партнёра, выбрать регион, обратиться в Торгпредство и подготовиться к выставке.</p>
+          </div>
+          <aside>
+            <strong>Важно помнить</strong>
+            <p>В Китае нет одного стиля ведения дел. Учитывайте отрасль, регион и правила конкретной компании.</p>
+          </aside>
+        </header>
+
+        <section class="export-route" aria-labelledby="exportRouteTitle">
+          <div class="culture-section-head compact">
+            <span>路</span>
+            <div>
+              <h2 id="exportRouteTitle">От запроса до первой продажи: семь шагов</h2>
+              <p>Каждый шаг должен заканчиваться понятным результатом: решением, документом или подтверждённым расчётом.</p>
+            </div>
+          </div>
+          <ol class="export-route-grid">
+            <li><b>01</b><strong>Выбрать рынок</strong><span>Определить покупателей, регион и способ продаж.</span></li>
+            <li><b>02</b><strong>Проверить партнёра</strong><span>Установить, кто покупает, платит, получает товар и подписывает договор.</span></li>
+            <li><b>03</b><strong>Согласовать оплату</strong><span>Зафиксировать валюту, банк, срок и документы для платежа.</span></li>
+            <li><b>04</b><strong>Проверить допуск</strong><span>Определить сертификацию, испытания, регистрацию и маркировку.</span></li>
+            <li><b>05</b><strong>Учесть ограничения</strong><span>Проверить конечного пользователя, данные и права на технологию.</span></li>
+            <li><b>06</b><strong>Собрать поставку</strong><span>Согласовать код товара, маршрут, переход риска и контроль груза.</span></li>
+            <li><b>07</b><strong>Провести пробную продажу</strong><span>Заранее определить, что считать успехом и когда расширять работу.</span></li>
+          </ol>
+        </section>
+
+        <div class="culture-toolbar">
+          <label for="cultureSearch">Найти тему</label>
+          <div>
+            <input id="cultureSearch" type="search" placeholder="Например: встреча, подарок, отказ или договор">
+            <button class="secondary-button" id="clearCultureSearch">Очистить</button>
+          </div>
+          <nav id="cultureTabs" aria-label="Темы о работе в Китае"></nav>
+        </div>
+
+        <div class="culture-content">
+          <main>
+            <div class="culture-section-head">
+              <span id="cultureSectionNumber">01</span>
+              <div><h2 id="cultureSectionTitle"></h2><p id="cultureSectionIntro"></p></div>
+            </div>
+            <div class="culture-card-grid" id="cultureCards"></div>
+            <div class="culture-empty" id="cultureEmpty" hidden>По этому запросу ничего не найдено. Попробуйте другое слово.</div>
+          </main>
+
+          <aside class="culture-side">
+            <section class="meeting-checklist">
+              <div class="panel-title"><span>Перед встречей</span><b id="checklistProgress">0/8</b></div>
+              <div id="cultureChecklist"></div>
+              <button class="text-reset" id="resetChecklist">Сбросить отметки</button>
+            </section>
+            <section class="phrasebook">
+              <div class="panel-title"><span>Пять полезных фраз</span><b>普通话</b></div>
+              <div id="culturePhrases"></div>
+            </section>
+          </aside>
+        </div>
+
+        <section class="exhibition-calendar">
+          <div class="culture-section-head compact">
+            <span>展</span>
+            <div>
+              <h2>Календарь выставок</h2>
+              <p>Даты 2026 года проверены по сайтам организаторов. Для 2027 года указаны события, за которыми стоит следить; точные даты появятся позже.</p>
+            </div>
+          </div>
+          <div class="exhibition-toolbar" id="exhibitionYears" aria-label="Год выставок"></div>
+          <div class="exhibition-grid" id="exhibitionGrid"></div>
+          <p class="exhibition-note" id="exhibitionNote"></p>
+        </section>
+
+        <section class="culture-sources">
+          <div class="culture-section-head compact">
+            <span>※</span>
+            <div><h2>На чём основаны рекомендации</h2><p id="cultureDisclaimer"></p></div>
+          </div>
+          <div id="cultureSources"></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="screen simulator-screen" id="simulatorScreen">
+      <nav class="chapter-strip" aria-label="Ход дела">
+        <ol id="chapterList"></ol>
+      </nav>
+
+      <div class="workspace">
+        <section class="scene-panel">
+          <header class="scene-head">
+            <div>
+              <div class="scene-meta" id="sceneMeta"></div>
+              <h2 id="sceneTitle" tabindex="-1"></h2>
+            </div>
+            <button class="context-button" id="contextDocumentButton">Документ ↗</button>
+          </header>
+
+          <div class="event-banner" id="eventBanner" aria-live="polite" hidden></div>
+
+          <nav class="desk-bar" aria-label="Рабочий стол дела">
+            <button id="inboxButton">
+              <span>Почта</span>
+              <b id="inboxCount">0</b>
+            </button>
+            <button id="deskDocumentsButton"><span>Документы</span><b id="deskDocumentCount">0</b></button>
+            <button id="preparationButton"><span>Проверка</span><b id="actionTokenCount">3</b></button>
+            <button id="stakeholdersButton"><span>Участники</span><b id="stakeholderCount">5</b></button>
+            <div class="deadline-chip"><span>Срок</span><strong id="deadlineIndicator">—</strong></div>
+            <div class="save-chip"><i></i><span id="saveIndicator">Сохранено</span></div>
+          </nav>
+
+          <div class="scene-body">
+            <div class="story-column">
+              <p class="story-copy" id="storyCopy"></p>
+              <div class="inside-card">
+                <span>Ключевой риск</span>
+                <p id="insightText">Сначала определите, что может сорвать сделку. Затем выбирайте действие.</p>
+              </div>
+            </div>
+
+            <div class="decision-column">
+              <div class="decision-heading">
+                <div>
+                  <span>Ваше решение</span>
+                  <strong id="decisionPrompt"></strong>
+                </div>
+                <small id="selectionHint">Один вариант</small>
+              </div>
+              <div class="choice-list" id="choiceList"></div>
+              <div class="dossier-grid" id="dossierGrid" hidden></div>
+              <div class="budget-board" id="budgetBoard" hidden></div>
+              <div class="mechanic-board" id="mechanicBoard" hidden></div>
+              <div class="terms-board" id="termsBoard" hidden></div>
+
+              <div class="rationale-box" id="rationaleBox">
+                <label for="rationaleInput">Обоснование <span id="rationaleCount">0/300</span></label>
+                <textarea id="rationaleInput" maxlength="300" placeholder="Укажите факт, риск, действие и ответственного или срок."></textarea>
+                <div class="rationale-signals" id="rationaleSignals" aria-live="polite"></div>
+              </div>
+            </div>
+
+            <div class="consequence-card" id="consequenceCard" aria-live="polite" hidden>
+              <span class="consequence-label">Что произошло</span>
+              <h3 id="consequenceTitle"></h3>
+              <p id="consequenceText"></p>
+              <div class="tradeoff" id="consequenceTradeoff"></div>
+              <div class="impact-chips" id="impactChips"></div>
+            </div>
+          </div>
+
+          <footer class="scene-footer">
+            <div class="scene-position" id="scenePosition">1 из 8</div>
+            <button class="primary-button" id="decisionSubmit" disabled>Принять решение <span>→</span></button>
+            <button class="primary-button" id="nextButton" hidden>Продолжить <span>→</span></button>
+          </footer>
+        </section>
+
+        <aside class="case-panel">
+          <section class="case-identity">
+            <span class="case-badge" id="caseBadge">ЗМ</span>
+            <div><small id="caseEyebrow"></small><strong id="caseProduct"></strong></div>
+          </section>
+          <section class="pulse-block">
+            <div class="panel-title"><span>Состояние проекта</span><b id="caseDay">День 1</b></div>
+            <div class="metric-grid" id="metrics"></div>
+          </section>
+          <section class="resource-block">
+            <div class="panel-title"><span>Ресурсы</span><b id="routeLine">маршрут открыт</b></div>
+            <div class="resource-grid" id="resources"></div>
+          </section>
+          <button class="analyst-button" id="analystButton">
+            <i>А</i>
+            <span><strong>Помощник по делу</strong><small>Проверить текущее решение</small></span>
+            <b>↗</b>
+          </button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="screen result-screen" id="resultScreen">
+      <div class="result-shell">
+        <header class="result-header">
+          <div>
+            <span class="overline">Экспертный разбор · <b id="resultProduct"></b></span>
+            <h2 id="resultTitle" tabindex="-1"></h2>
+            <p id="resultLead"></p>
+          </div>
+          <div class="result-score"><strong id="resultScore">0</strong><span>из 100</span></div>
+        </header>
+        <div class="result-grid">
+          <section class="board-card">
+            <div>
+            <span>Рекомендация</span>
+              <h3 id="boardVerdict"></h3>
+              <p id="boardLead"></p>
+            </div>
+            <ul id="boardConditions"></ul>
+          </section>
+          <section class="assessment-card">
+            <div class="panel-title"><span>Как рассчитана оценка</span><b>четыре критерия</b></div>
+            <div id="assessmentBreakdown"></div>
+          </section>
+          <section class="evidence-card">
+            <div class="panel-title"><span>Доказательства решения</span><b id="evidenceCount"></b></div>
+            <div id="evidenceList"></div>
+          </section>
+          <section class="profile-card">
+            <span>Как вы принимали решения</span>
+            <h3 id="profileTitle"></h3>
+            <p id="profileText"></p>
+            <div class="metric-grid large" id="resultMetrics"></div>
+          </section>
+          <section class="mastery-card">
+            <div class="panel-title"><span>Карта навыков</span><b id="masteryCases"></b></div>
+            <div id="skillMap"></div>
+          </section>
+          <section class="verdict-card">
+            <span>Заключение</span>
+            <p id="resultVerdict"></p>
+            <ol id="actionPlan"></ol>
+          </section>
+          <section class="economics-card">
+            <div class="panel-title"><span>Экономика сделки</span><b id="economicsLabel"></b></div>
+            <div class="economics-total"><span>Выручка</span><strong id="economicsRevenue"></strong></div>
+            <div id="economicsLines"></div>
+            <div class="economics-contribution"><span>Остаток после расходов и рисков</span><strong id="economicsContribution"></strong><small id="economicsMargin"></small></div>
+          </section>
+          <section class="review-card">
+            <div class="panel-title"><span>Главные решения</span><b id="resultEventCount"></b></div>
+            <div class="review-grid">
+              <article><span>Лучшее решение</span><p id="resultStrongestDecision"></p></article>
+              <article><span>Самый рискованный выбор</span><p id="resultRiskiestDecision"></p></article>
+              <article><span>Что осталось без проверки</span><p id="resultBlindSpot"></p></article>
+            </div>
+            <div class="alternative-path" id="alternativePath"></div>
+          </section>
+          <section class="trail-card">
+            <div class="panel-title"><span>Ход решений</span><b>ваши объяснения</b></div>
+            <div id="decisionTrail"></div>
+          </section>
+        </div>
+        <div class="result-actions">
+          <button class="primary-button" id="replayButton">Пройти это дело заново <span>↻</span></button>
+          <button class="secondary-button" id="chooseAnotherButton">Выбрать другое дело</button>
+          <button class="secondary-button" id="printButton">Сохранить как PDF</button>
+          <button class="secondary-button" id="downloadButton">Скачать отчёт</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal briefing-modal" id="briefingModal" hidden>
+    <div class="modal-backdrop"></div>
+    <section class="briefing-panel" role="dialog" aria-modal="true" aria-labelledby="briefingTitle">
+      <div class="briefing-number" id="briefingNumber">01</div>
+      <div class="briefing-copy">
+        <span class="overline">Задача руководителя</span>
+        <p class="briefing-caller" id="briefingCaller"></p>
+        <h2 id="briefingTitle"></h2>
+        <p class="briefing-mandate" id="briefingMandate"></p>
+        <div class="briefing-stakes">
+          <article><span>Что может пойти не так</span><p id="briefingAtRisk"></p></article>
+          <article><span>Что нельзя делать</span><p id="briefingNonNegotiable"></p></article>
+        </div>
+        <div class="briefing-objectives">
+          <span>Что нужно выяснить</span>
+          <ol id="briefingObjectives"></ol>
+        </div>
+      </div>
+      <aside class="briefing-facts">
+        <span id="briefingMark">ЗМ</span>
+        <dl>
+          <div><dt>Должность</dt><dd id="briefingRole"></dd></div>
+          <div><dt>Срок</dt><dd id="briefingDays"></dd></div>
+          <div><dt>Резерв</dt><dd id="briefingBudget"></dd></div>
+          <div><dt>Решений</dt><dd>8</dd></div>
+        </dl>
+        <button class="primary-button" id="acceptBriefingButton">Начать <span>→</span></button>
+        <button class="briefing-back" id="cancelBriefingButton">Вернуться к выбору</button>
+      </aside>
+    </section>
+  </div>
+
+  <div class="modal inbox-modal" id="inboxModal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-panel inbox-panel" role="dialog" aria-modal="true" aria-labelledby="inboxTitle">
+      <button class="close-button" data-close-modal aria-label="Закрыть">×</button>
+      <aside>
+        <span class="overline">Рабочий стол</span>
+        <h2 id="inboxTitle">Сообщения</h2>
+        <div class="inbox-list" id="inboxList"></div>
+      </aside>
+      <article class="message-view" id="messageView"></article>
+    </section>
+  </div>
+
+  <div class="modal" id="preparationModal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-panel preparation-panel" role="dialog" aria-modal="true" aria-labelledby="preparationTitle">
+      <button class="close-button" data-close-modal aria-label="Закрыть">×</button>
+      <span class="overline">Можно провести только три проверки</span>
+      <h2 id="preparationTitle">Что проверить перед решением</h2>
+      <p id="preparationIntro"></p>
+      <div class="preparation-options" id="preparationOptions"></div>
+      <article class="preparation-result" id="preparationResult" hidden></article>
+    </section>
+  </div>
+
+  <div class="modal" id="stakeholdersModal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-panel stakeholders-panel" role="dialog" aria-modal="true" aria-labelledby="stakeholdersTitle">
+      <button class="close-button" data-close-modal aria-label="Закрыть">×</button>
+      <span class="overline">Стороны сделки</span>
+      <h2 id="stakeholdersTitle">Кто продаёт, платит, принимает товар и отвечает за работу</h2>
+      <div class="stakeholder-grid" id="stakeholderGrid"></div>
+      <div class="connection-list" id="stakeholderConnections"></div>
+    </section>
+  </div>
+
+  <div class="modal" id="documentModal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel document-panel" role="dialog" aria-modal="true" aria-labelledby="documentTitle">
+      <button class="close-button" data-close-modal aria-label="Закрыть">×</button>
+      <aside><span>Материалы дела</span><div id="documentTabs"></div></aside>
+      <article>
+        <div class="document-stamp">Учебный документ</div>
+        <h2 id="documentTitle"></h2>
+        <div id="documentBody"></div>
+        <section class="document-review" id="documentReview" hidden></section>
+      </article>
+    </div>
+  </div>
+
+  <div class="modal" id="methodModal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel method-panel" role="dialog" aria-modal="true" aria-labelledby="methodTitle">
+      <button class="close-button" data-close-modal aria-label="Закрыть">×</button>
+      <span class="overline">Как устроен тренажёр</span>
+      <h2 id="methodTitle">Оценка зависит от решений, найденных фактов, переговоров и качества объяснений.</h2>
+      <div class="assessment-weights">
+        <div><b>35%</b><strong>Качество решений</strong><p>Учитываются скорость работы, доверие партнёров, контроль рисков и экономика сделки.</p></div>
+        <div><b>25%</b><strong>Проверка фактов</strong><p>Важно найти опасные пробелы в документах и правильно проверить особенности товара.</p></div>
+        <div><b>20%</b><strong>Работа с ресурсами</strong><p>Оценивается распределение бюджета, времени и нагрузки на команду.</p></div>
+        <div><b>20%</b><strong>Готовность к неожиданностям</strong><p>Проверяется, сможете ли вы продолжить проект после новых требований или сбоев.</p></div>
+      </div>
+      <div class="method-grid">
+        <div><b>01</b><strong>Обоснование решения</strong><p>Назовите факт, риск, действие и ответственного или срок. Простая длина текста больше не даёт высокий балл.</p></div>
+        <div><b>02</b><strong>Проверка документов</strong><p>Откройте досье и отметьте фрагменты, которые требуют углублённой проверки.</p></div>
+        <div><b>03</b><strong>Переговоры</strong><p>Соберите четыре условия сделки и ответьте на встречное предложение партнёра.</p></div>
+        <div><b>04</b><strong>Итоговый разбор</strong><p>В конце вы получите карту навыков, план действий и готовый для печати отчёт.</p></div>
+      </div>
+      <p class="method-note">Это учебная симуляция, а не юридическая, таможенная или инвестиционная рекомендация. Сведения из открытых источников и сценарные допущения разделены в паспорте данных каждого дела.</p>
+    </div>
+  </div>
+
+  <aside class="analyst-drawer" id="analystDrawer" aria-hidden="true">
+    <header><div><i>А</i><span><strong>Помощник по делу</strong><small>вопросы для самопроверки</small></span></div><button class="close-button" id="closeAnalyst" aria-label="Закрыть">×</button></header>
+    <div class="drawer-note">Помощник не принимает решение за вас. Он подсказывает, какой факт стоит проверить и какой риск вы могли пропустить. Позже сюда можно подключить помощника на основе искусственного интеллекта.</div>
+    <div class="chat-log" id="chatLog"></div>
+    <div class="prompt-chips" id="promptChips"></div>
+    <form id="analystForm"><label for="analystInput">Свой вопрос</label><div><input id="analystInput" maxlength="180" autocomplete="off" placeholder="Где сейчас главный риск?"><button type="submit">Спросить</button></div></form>
+  </aside>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
